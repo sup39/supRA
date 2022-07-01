@@ -15,6 +15,7 @@ static uint8_t
   *ra_msg_buflim = NULL;
 
 void init_ra_msg_buf(size_t bufsize) {
+  free(ra_msg_buf); // free previous
   ra_msg_ptr = ra_msg_buf = malloc(bufsize);
   ra_msg_buflim = ra_msg_buf+bufsize;
 

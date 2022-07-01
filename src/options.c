@@ -203,5 +203,7 @@ int supRA_read_option(const char *path) {
     intvl->interval = htonl(val);
   }
 
+  // done
+  lua_close(L);
   return rc;
 }
