@@ -1,7 +1,6 @@
 VERSION = 0.1.0-beta.1
-CC = gcc
-CFLAGS = -O2
-LDFLAGS = -llua -lm
+CFLAGS = -Os $(and $(LUA_ROOT),-I$(LUA_ROOT)) $(MYCFLAGS)
+LDFLAGS = $(and $(LUA_ROOT),-L$(LUA_ROOT)) -llua -lm $(MYLDFLAGS)
 
 IFACE = eth0
 CONFILE = config.lua
